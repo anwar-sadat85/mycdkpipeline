@@ -1,0 +1,22 @@
+[
+  {
+    "category": "function",
+    "resourceName": "ahcamplifypocv1lambda",
+    "service": "Lambda"
+  },
+  {
+    "category": "api",
+    "resourceName": "apiahcamplifypocv1",
+    "service": "API Gateway"
+  },
+  {
+    "category": "auth",
+    "resourceName": "ahcamplifypocapp8485a36b",
+    "service": "Cognito"
+  },
+  {
+    "category": "hosting",
+    "resourceName": "amplifyhosting",
+    "service": "amplifyhosting"
+  }
+]

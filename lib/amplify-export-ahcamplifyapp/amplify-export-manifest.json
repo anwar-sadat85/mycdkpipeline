@@ -1,0 +1,90 @@
+{
+  "stackName": "amplify-ahcamplifyapp-dev-105446",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-ahcamplifyapp-dev-105446-authRole",
+      "UnauthRoleName": "amplify-ahcamplifyapp-dev-105446-unauthRole",
+      "DeploymentBucketName": "amplify-ahcamplifyapp-dev-105446-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "apiapiahcamplifypocv1": {
+        "templateFile": "api\\apiahcamplifypocv1\\apiahcamplifypocv1-cloudformation-template.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "authahcamplifypocapp8485a36b": {
+        "templateFile": "auth\\ahcamplifypocapp8485a36b\\ahcamplifypocapp8485a36b-cloudformation-template.json",
+        "parameters": {
+          "identityPoolName": "ahcamplifypocapp8485a36b_identitypool_8485a36b",
+          "allowUnauthenticatedIdentities": false,
+          "resourceNameTruncated": "ahcamp8485a36b",
+          "userPoolName": "ahcamplifypocapp8485a36b_userpool_8485a36b",
+          "autoVerifiedAttributes": [
+            "email"
+          ],
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS Text Message"
+          ],
+          "smsAuthenticationMessage": "Your authentication code is {####}",
+          "smsVerificationMessage": "Your verification code is {####}",
+          "emailVerificationSubject": "Your verification code",
+          "emailVerificationMessage": "Your verification code is {####}",
+          "defaultPasswordPolicy": false,
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [],
+          "requiredAttributes": [
+            "email"
+          ],
+          "aliasAttributes": [],
+          "userpoolClientGenerateSecret": false,
+          "userpoolClientRefreshTokenValidity": 30,
+          "userpoolClientWriteAttributes": [
+            "email"
+          ],
+          "userpoolClientReadAttributes": [
+            "email"
+          ],
+          "userpoolClientLambdaRole": "ahcamp8485a36b_userpoolclient_lambda_role",
+          "userpoolClientSetAttributes": false,
+          "sharedId": "8485a36b",
+          "resourceName": "ahcamplifypocapp8485a36b",
+          "authSelections": "identityPoolAndUserPool",
+          "useDefault": "default",
+          "userPoolGroupList": [],
+          "serviceName": "Cognito",
+          "usernameCaseSensitive": false,
+          "useEnabledMfas": false,
+          "breakCircularDependency": false,
+          "dependsOn": [],
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "functionahcamplifypocv1lambda": {
+        "templateFile": "function\\ahcamplifypocv1lambda\\ahcamplifypocv1lambda-cloudformation-template.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "hostingamplifyhosting": {
+        "templateFile": "hosting\\amplifyhosting\\amplifyhosting-template.json",
+        "parameters": {
+          "appId": "d2om0cfi7ev85t",
+          "type": "manual",
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}
